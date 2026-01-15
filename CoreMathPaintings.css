@@ -1,0 +1,121 @@
+/* CoreMathPaintings.css
+   Modern Scientific UI - ASCII Safe
+
+Table of Contents:
+* 1. Root
+* 2. Body
+* 3. Painting Core Math
+* 4. Header
+* 5. Data rows
+  * 5.1. Main data row
+  * 5.2. Last child
+  * 5.3. Hover
+* 6. Label & Value Styling
+  * 6.1. Label
+  * 6.2. Value
+* 7. Physics Highlight Class
+* 8. Simple pulse for important constants
+*/
+
+/* 1. Root */
+:root {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --primary: #2563eb;
+    --text-dark: #0f172a;
+    --text-light: #64748b;
+    --border: #e2e8f0;
+    --accent: #3b82f6;
+    --energy-gold: #f59e0b;
+}
+
+/* 2. Body */
+body {
+    background-color: var(--bg-color);
+    /* The "Anti-Monospace" Font Stack */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-dark);
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 3. Painting CoreMath.js */
+.core-math-paint {
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 450px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* 4. Header */
+.core-math-paint h2 {
+    background-color: #f1f5f9;
+    margin: 0;
+    padding: 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    border-bottom: 1px solid var(--border);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 5. Data Rows */
+/* 5.1. Main data row */
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    transition: background-color 0.2s ease;
+}
+
+/* 5.2. Last child */
+.data-row:last-child {
+    border-bottom: none;
+}
+
+/* 5.3. Hover */
+.data-row:hover {
+    background-color: #f8fafc;
+}
+
+/* 6. Label & Value Styling */
+/* 6.1. Label */
+.data-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+/* 6.2. Value */
+.data-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* 7. Physics Highlight Class */
+.physics-highlight {
+    color: var(--energy-gold);
+    font-weight: 800;
+}
+
+/* 8. Simple Pulse for Important Constants */
+.pulse {
+    animation: pulse-blue 2s infinite;
+}
+
+@keyframes pulse-blue {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
